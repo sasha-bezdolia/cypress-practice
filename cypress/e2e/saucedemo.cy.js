@@ -10,6 +10,7 @@ const invalidPassword = 'Invalid Password';
 describe('Login tests', () => {
     
     beforeEach(() => {
+        cy.intercept({ resourceType: /xhr|fetch/ }, { log: false });
         cy.visit('/');
     });
 
